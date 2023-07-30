@@ -1,0 +1,382 @@
+@import "mixins";
+@import "vars";
+@import "blog-style";
+
+%secondaryTextstyle {
+    color: $secondTextColor;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "DM Serif Display", "Jost", serif;
+    padding-bottom: 134px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    max-width: $siteWidth;
+    margin: 0 auto;
+
+    &__name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__logo {
+        height: 34px;
+        width: 34px;
+    }
+
+    &__head {
+        @include fontStyle(40px, $textColor);
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        width: 240px;
+    }
+
+    &__link {
+        font-family: $smallTextFont;
+        text-align: center;
+        @include fontStyle(20px, $textColor);
+    }
+}
+
+.promo {
+    background-image: url("./img/promo.png");
+    background-repeat: no-repeat;
+    height: 760px;
+    border-radius: 70px;
+    max-width: $siteWidth;
+    margin: 0 auto;
+    margin-top: 60px;
+
+    &__info {
+        padding: 208px 52px;
+        max-width: 435px;
+    }
+
+    &__head {
+        @include fontStyle(65px, $textColor);
+        margin-bottom: 18px;
+    }
+
+    &__text {
+        font-family: $smallTextFont;
+        letter-spacing: 0.22px;
+        @extend %secondaryTextstyle;
+    }
+
+    &__link {
+        display: block;
+        border-radius: 18px;
+        margin-top: 21px;
+        max-width: 220px;
+        height: 75px;
+        overflow: hidden;
+        box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+        background: $textColor;
+    }
+
+    &__button {
+        height: 100%;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include fontStyle(18px, #fff);
+        font-family: $smallTextFont;
+        letter-spacing: 0.36px;
+    }
+}
+
+.top {
+    max-width: $siteWidth;
+    margin: 0 auto;
+    padding-bottom: 38px;
+
+    &__head {
+        padding-top: 96px;
+        text-align: center;
+        @include fontStyle(50px, $textColor);
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        text-align: center;
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+        letter-spacing: 0.22px;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(auto, 550px));
+        justify-content: space-between;
+        padding-top: 93px;
+    }
+
+    &__img {
+        padding-bottom: 24px;
+        width: 100%;
+    }
+
+    &__description {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 58px;
+    }
+
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__heading {
+        @include fontStyle(25px, $textColor);
+        letter-spacing: 0.5px;
+    }
+
+    &__text-item {
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+        letter-spacing: 0.22px;
+    }
+}
+
+.about {
+    background: #f4f0ec;
+    height: 455px;
+    padding-top: 150px;
+    box-sizing: border-box;
+    margin-bottom: 96px;
+
+    &__container {
+        display: flex;
+        max-width: 1080px;
+        justify-content: space-between;
+        align-items: center;
+        height: 155px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__heading {
+        @include fontStyle(85px, #cda274);
+        letter-spacing: 1.7px;
+    }
+
+    &__text {
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+        letter-spacing: 0.22px;
+    }
+}
+
+.bottom {
+    max-width: $siteWidth;
+    margin: 0 auto;
+    margin-bottom: 96px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 52px;
+    }
+
+    &__item {
+        padding: 21px;
+        max-width: 382px;
+        box-sizing: border-box;
+        border-radius: 62px;
+        border: 1px solid #e7e7e7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+    }
+
+    &__item:nth-child(even) {
+        background: #f4f0ec;
+
+        & circle {
+            fill: white;
+        }
+    }
+
+    &__head {
+        text-align: center;
+        @include fontStyle(50px, $textColor);
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        text-align: center;
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+        letter-spacing: 0.22px;
+        max-width: 810px;
+        margin: 0 auto;
+    }
+
+    &__img-box {
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__inside {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        padding: 10px;
+        border-radius: 8px 8px 8px 0px;
+        background: #fff;
+        width: 100%;
+        max-width: 135px;
+        box-sizing: border-box;
+    }
+
+    &__inside-text {
+        color: $secondTextColor;
+        font-family: $smallTextFont;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.16px;
+    }
+
+    &__link-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading {
+        margin-top: 20px;
+        @include fontStyle(25px, $textColor);
+        letter-spacing: 0.5px;
+        max-width: 280px;
+    }
+
+    &__date {
+        color: $secondTextColor;
+        font-family: $smallTextFont;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+    }
+
+    &__link {
+        overflow: hidden;
+        border-radius: 50%;
+        max-width: 52px;
+        max-height: 52px;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: $siteWidth;
+    margin: 0 auto;
+    height: 275px;
+
+    &__left {
+        max-height: 190px;
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    &__logo {
+        height: 34px;
+        width: 34px;
+    }
+
+    &__head {
+        @include fontStyle(40px, $textColor);
+    }
+
+    &__text {
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+        letter-spacing: 0.22px;
+        max-width: 390px;
+    }
+
+    &__social {
+        margin-top: 30px;
+        max-width: 90px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 220px;
+        margin-right: 250px;
+
+        &-heading {
+            @include fontStyle(25px, $textColor);
+        }
+    }
+
+    &__link {
+        font-family: $smallTextFont;
+        @include fontStyle(22px, $textColor);
+    }
+
+    &__contacts {
+        max-height: 250px;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        @include fontStyle(25px, $textColor);
+    }
+
+    &__info {
+        font-family: $smallTextFont;
+        @include fontStyle(22px, $secondTextColor);
+        letter-spacing: 0.22px;
+    }
+}

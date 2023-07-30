@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vuejsstyle.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Вы разрабатываете приложение для отображения и сортировки списка товаров. У вас есть массив объектов products, где каждый объект представляет товар с его названием и ценой. Вам необходимо отобразить список товаров и предоставить пользователю возможность сортировать товары по цене (по возрастанию и по убыванию). -->
+
+        <ul class="products">
+            <li class="products__item" v-for="item in products" :key="item.title">
+                Название: {{ item.title }}, Цена: {{ item.price }}
+            </li>
+        </ul>
+        <button @click="sortArray('ascending')" class="sort">Сначала дешевле</button>
+        <button @click="sortArray('descending')" class="sort">Сначала дороже</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="vuejsscript.js"></script>
+
+</body>
+
+</html>

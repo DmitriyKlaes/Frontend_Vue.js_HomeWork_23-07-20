@@ -1,0 +1,123 @@
+.blog-promo {
+    background-image: url("./img/mainblog.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    height: 356px;
+    max-width: 1920px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 200px;
+
+    &__head {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        background: #fff;
+        padding: 41px 78px;
+        border-radius: 37px 37px 0px 0px;
+    }
+
+    &__title {
+        @include fontStyle(50px, $textColor);
+    }
+
+    &__text {
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+    }
+}
+.content {
+    max-width: $siteWidth;
+    margin: 0 auto;
+
+    &__title {
+        @include fontStyle(50px, $textColor);
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+}
+
+.latest-post {
+    max-width: $siteWidth;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 62px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+
+    &__img {
+        border-radius: 50px;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 490px;
+        margin-right: 34px;
+    }
+
+    &__heading {
+        @include fontStyle(25px, $textColor);
+        letter-spacing: 0.5px;
+        margin-bottom: 22px;
+        max-width: 470px;
+    }
+
+    &__text-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 190px;
+        max-width: 470px;
+    }
+
+    &__text {
+        font-family: $smallTextFont;
+        @extend %secondaryTextstyle;
+        letter-spacing: 0.22px;
+    }
+
+    &__datelink {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 41px;
+    }
+
+    &__date {
+        color: $secondTextColor;
+        font-family: $smallTextFont;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+    }
+
+    &__link {
+        overflow: hidden;
+        border-radius: 50%;
+        max-width: 52px;
+        max-height: 53px;
+    }
+}
+
+.bottom__content-blog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 382px));
+    gap: 27px;
+}
+
+.bottom__pagination {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
